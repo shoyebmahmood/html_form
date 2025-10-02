@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      padding: 20px;
+    }
+    h2 {
+      color: #e67e22;
+      margin-left:72px;
+      margin-bottom: 10px;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 1000px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .radio-group {
+      margin-top: 5px;
+      width:auto;
+    }
+    .radio-group label {
+      margin-right: 15px;
+      font-weight: normal;
+    }
+
+    /* DOB FIX */
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 6px;
+    }
+    fieldset legend {
+      font-weight: bold;
+    }
+    .dob-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      text-align: center;
+    }
+    .dob-grid label {
+      font-weight: bold;
+    }
+    .dob-grid select {
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    .file-note {
+      font-size: 12px;
+      color: #666;
+    }
+    .full-width {
+      grid-column: span 2;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Registration Form</h2>
+  <form>
+
+    <!-- LEFT SIDE -->
+    <div>
+      <p><b>Please enter relevant information</b></p>
+
+      <label for="district">District (Institute District: Where you want to do your course)*</label>
+      <select id="district" required>
+        <option value="">--Select One--</option>
+        <option>Dhaka</option>
+        <option>Chattogram</option>
+        <option>Khulna</option>
+      </select>
+
+      <label for="course">Course*</label>
+      <select id="course" required>
+        <option value="">--Select One--</option>
+        <option>Computer Training</option>
+        <option>Technical Course</option>
+      </select>
+
+      <label for="studentName">Student Name*</label>
+      <input type="text" id="studentName" required>
+
+      <label for="fatherName">Father Name*</label>
+      <input type="text" id="fatherName" required>
+
+      <label for="motherName">Mother Name*</label>
+      <input type="text" id="motherName" required>
+
+      <fieldset>
+        <legend>Date of Birth*</legend>
+        <div class="dob-grid">
+          <label for="day">Day: </label>
+          <label for="month">Month: </label>
+          <label for="year">Year: </label>
+
+          <select name="day" id="day" required>
+            <option value="">Select</option>
+            <option>1</option><option>2</option><option>3</option>
+            <option>4</option><option>5</option><option>6</option>
+            <option>7</option><option>8</option><option>9</option>
+            <option>10</option><option>11</option><option>12</option>
+            <option>13</option><option>14</option><option>15</option>
+            <option>16</option><option>17</option><option>18</option>
+            <option>19</option><option>20</option><option>21</option>
+            <option>22</option><option>23</option><option>24</option>
+            <option>25</option><option>26</option><option>27</option>
+            <option>28</option><option>29</option><option>30</option>
+            <option>31</option>
+          </select>
+
+          <select name="month" id="month" required>
+            <option value="">Select</option>
+            <option>January</option><option>February</option><option>March</option>
+            <option>April</option><option>May</option><option>June</option>
+            <option>July</option><option>August</option><option>September</option>
+            <option>October</option><option>November</option><option>December</option>
+          </select>
+
+          <select name="year" id="year" required>
+            <option value="">Select</option>
+            <option>2025</option><option>2024</option><option>2023</option>
+            <option>2022</option><option>2021</option><option>2020</option>
+            <option>2019</option><option>2018</option><option>2017</option>
+            <option>2016</option><option>2015</option><option>2014</option>
+            <option>2013</option><option>2012</option><option>2011</option>
+            <option>2010</option><option>2009</option><option>2008</option>
+            <option>2007</option><option>2006</option><option>2005</option>
+            <option>2004</option><option>2003</option><option>2002</option>
+            <option>2001</option><option>2000</option><option>1999</option>
+            <option>1998</option><option>1997</option><option>1996</option>
+            <option>1995</option><option>1994</option><option>1993</option>
+            <option>1992</option><option>1991</option><option>1990</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <div class="radio-group">
+        <label>Gender*</label>
+        <label><input type="radio" name="gender" value="male" required> Male</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+      </div>
+
+      <div class="radio-group">
+        <label>Physically Handicapped?*</label>
+        <label><input type="radio" name="handicap" value="yes" required> Yes</label>
+        <label><input type="radio" name="handicap" value="no"> No</label>
+      </div>
+
+      <label for="email">Email*</label>
+      <input type="email" id="email" placeholder="(e.g: example@mail.com)" required>
+
+      <label for="phone">Phone (Must be 11 Digits)*</label>
+      <input type="tel" id="phone" pattern="[0-9]{11}" placeholder="(e.g: 01551234567)" required>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div>
+      <label for="idType">Identification Type*</label>
+      <select id="idType" required>
+        <option value="">Select One</option>
+        <option value="nid">NID</option>
+        <option value="passport">Passport</option>
+        <option value="birth">Birth Certificate</option>
+      </select>
+
+      <label for="idNo">Identification No.*</label>
+      <input type="text" id="idNo" 
+             placeholder="Must be 10 or 17 digits. If 13 digits, add birth year (e.g. 1980XXXXXXXXXXX)" 
+             required>
+
+      <label for="homeDistrict">Home District*</label>
+      <select id="homeDistrict" required>
+        <option value="">Select One</option>
+        <option>Dhaka</option>
+        <option>Chattogram</option>
+      </select>
+
+      <label for="upazila">Upazila*</label>
+      <select id="upazila" required>
+        <option value="">Select One</option>
+        <option>Example Upazila 1</option>
+      </select>
+
+      <label for="address">Village/House No./Road No./Other Alternative*</label>
+      <input type="text" id="address" required>
+
+      <label for="postOffice">Post Office*</label>
+      <input type="text" id="postOffice" required>
+
+      <label for="education">Educational Qualification* (Higher Level)</label>
+      <select id="education" required>
+        <option value="">--Select One--</option>
+        <option>SSC</option>
+        <option>HSC</option>
+        <option>Graduate</option>
+        <option>Post Graduate</option>
+      </select>
+
+      <div class="radio-group">
+        <label>Have any computer?*</label>
+        <label><input type="radio" name="computer" value="yes" required> Yes</label>
+        <label><input type="radio" name="computer" value="no"> No</label>
+      </div>
+
+      <label for="photo">Photograph*</label>
+      <input type="file" id="photo" accept=".jpg,.jpeg,.png" required>
+      <p class="file-note">(File type must be jpg or jpeg or png. Maximum file size 2 mb.)</p>
+
+      <label for="signature">Signature*</label>
+      <input type="file" id="signature" accept=".jpg,.jpeg,.png" required>
+      <p class="file-note">(File type must be jpg or jpeg or png. Maximum file size 2 mb.)</p>
+    </div>
+
+    <!-- SUBMIT BUTTON -->
+    <div class="full-width">
+      <button type="submit">Submit Data</button>
+    </div>
+
+  </form>
+
+</body>
+</html>
