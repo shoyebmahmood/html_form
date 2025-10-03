@@ -40,13 +40,25 @@
       border-radius: 4px;
       box-sizing: border-box;
     }
+
+    /* ✅ Radio Buttons Fix */
     .radio-group {
-      margin-top: 5px;
-      width:auto;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .radio-group > label:first-child {
+      font-weight: bold;
+      margin-right: 10px;
     }
     .radio-group label {
-      margin-right: 15px;
       font-weight: normal;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin: 0;
     }
 
     /* DOB FIX */
@@ -61,15 +73,16 @@
     .dob-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      text-align: center;
+      gap: 15px;
+      text-align: left;
     }
     .dob-grid label {
+      display: block;
+      margin-bottom: 5px;
       font-weight: bold;
     }
     .dob-grid select {
       width: 100%;
-      margin-top: 5px;
     }
 
     .file-note {
@@ -101,11 +114,11 @@
 
     <!-- LEFT SIDE -->
     <div>
-      <p><b>Please enter relevant information</b></p>
+      <p><b>Please enter relevant information (Mandatory Fields*)</b></p>
 
       <label for="district">District (Institute District: Where you want to do your course)*</label>
       <select id="district" required>
-        <option value="">--Select One--</option>
+        <option value="">Select One</option>
         <option>Dhaka</option>
         <option>Chattogram</option>
         <option>Khulna</option>
@@ -113,7 +126,7 @@
 
       <label for="course">Course*</label>
       <select id="course" required>
-        <option value="">--Select One--</option>
+        <option value="">Select One</option>
         <option>Computer Training</option>
         <option>Technical Course</option>
       </select>
@@ -130,48 +143,51 @@
       <fieldset>
         <legend>Date of Birth*</legend>
         <div class="dob-grid">
-          <label for="day">Day: </label>
-          <label for="month">Month: </label>
-          <label for="year">Year: </label>
-
-          <select name="day" id="day" required>
-            <option value="">Select</option>
-            <option>1</option><option>2</option><option>3</option>
-            <option>4</option><option>5</option><option>6</option>
-            <option>7</option><option>8</option><option>9</option>
-            <option>10</option><option>11</option><option>12</option>
-            <option>13</option><option>14</option><option>15</option>
-            <option>16</option><option>17</option><option>18</option>
-            <option>19</option><option>20</option><option>21</option>
-            <option>22</option><option>23</option><option>24</option>
-            <option>25</option><option>26</option><option>27</option>
-            <option>28</option><option>29</option><option>30</option>
-            <option>31</option>
-          </select>
-
-          <select name="month" id="month" required>
-            <option value="">Select</option>
-            <option>January</option><option>February</option><option>March</option>
-            <option>April</option><option>May</option><option>June</option>
-            <option>July</option><option>August</option><option>September</option>
-            <option>October</option><option>November</option><option>December</option>
-          </select>
-
-          <select name="year" id="year" required>
-            <option value="">Select</option>
-            <option>2025</option><option>2024</option><option>2023</option>
-            <option>2022</option><option>2021</option><option>2020</option>
-            <option>2019</option><option>2018</option><option>2017</option>
-            <option>2016</option><option>2015</option><option>2014</option>
-            <option>2013</option><option>2012</option><option>2011</option>
-            <option>2010</option><option>2009</option><option>2008</option>
-            <option>2007</option><option>2006</option><option>2005</option>
-            <option>2004</option><option>2003</option><option>2002</option>
-            <option>2001</option><option>2000</option><option>1999</option>
-            <option>1998</option><option>1997</option><option>1996</option>
-            <option>1995</option><option>1994</option><option>1993</option>
-            <option>1992</option><option>1991</option><option>1990</option>
-          </select>
+          <div>
+            <label for="day" style="text-align:center;">Day:</label>
+            <select name="day" id="day" required>
+              <option value="">Select</option>
+              <option>1</option><option>2</option><option>3</option>
+              <option>4</option><option>5</option><option>6</option>
+              <option>7</option><option>8</option><option>9</option>
+              <option>10</option><option>11</option><option>12</option>
+              <option>13</option><option>14</option><option>15</option>
+              <option>16</option><option>17</option><option>18</option>
+              <option>19</option><option>20</option><option>21</option>
+              <option>22</option><option>23</option><option>24</option>
+              <option>25</option><option>26</option><option>27</option>
+              <option>28</option><option>29</option><option>30</option>
+              <option>31</option>
+            </select>
+          </div>
+          <div>
+            <label for="month"style="text-align:center;">Month:</label>
+            <select name="month" id="month" required>
+              <option value="">Select</option>
+              <option>January</option><option>February</option><option>March</option>
+              <option>April</option><option>May</option><option>June</option>
+              <option>July</option><option>August</option><option>September</option>
+              <option>October</option><option>November</option><option>December</option>
+            </select>
+          </div>
+          <div>
+            <label for="year"style="text-align:center;">Year:</label>
+            <select name="year" id="year" required>
+              <option value="">Select</option>
+              <option>2025</option><option>2024</option><option>2023</option>
+              <option>2022</option><option>2021</option><option>2020</option>
+              <option>2019</option><option>2018</option><option>2017</option>
+              <option>2016</option><option>2015</option><option>2014</option>
+              <option>2013</option><option>2012</option><option>2011</option>
+              <option>2010</option><option>2009</option><option>2008</option>
+              <option>2007</option><option>2006</option><option>2005</option>
+              <option>2004</option><option>2003</option><option>2002</option>
+              <option>2001</option><option>2000</option><option>1999</option>
+              <option>1998</option><option>1997</option><option>1996</option>
+              <option>1995</option><option>1994</option><option>1993</option>
+              <option>1992</option><option>1991</option><option>1990</option>
+            </select>
+          </div>
         </div>
       </fieldset>
 
@@ -191,7 +207,7 @@
       <input type="email" id="email" placeholder="(e.g: example@mail.com)" required>
 
       <label for="phone">Phone (Must be 11 Digits)*</label>
-      <input type="tel" id="phone" pattern="[0-9]{11}" placeholder="(e.g: 01551234567)" required>
+      <input type="tel" id="phone" pattern="^\d{11}$" placeholder="(e.g: 01551234567)" required>
     </div>
 
     <!-- RIGHT SIDE -->
@@ -244,11 +260,13 @@
       </div>
 
       <label for="photo">Photograph*</label>
-      <input type="file" id="photo" accept=".jpg,.jpeg,.png" required>
+      <input type="file" id="photo" accept=".jpg,.jpeg,.png" required 
+             onchange="if(this.files[0].size > 2097152){alert('File too large! Max 2MB'); this.value='';}">
       <p class="file-note">(File type must be jpg or jpeg or png. Maximum file size 2 mb.)</p>
 
       <label for="signature">Signature*</label>
-      <input type="file" id="signature" accept=".jpg,.jpeg,.png" required>
+      <input type="file" id="signature" accept=".jpg,.jpeg,.png" required 
+             onchange="if(this.files[0].size > 2097152){alert('File too large! Max 2MB'); this.value='';}">
       <p class="file-note">(File type must be jpg or jpeg or png. Maximum file size 2 mb.)</p>
     </div>
 
@@ -261,3 +279,4 @@
 
 </body>
 </html>
+
